@@ -5,14 +5,12 @@
 [![Python Version](https://img.shields.io/pypi/pyversions/documented.svg)](https://pypi.org/project/documented/)
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 
-Human readable exceptions in Python.
-
+Templated docstrings for Python classes.
 
 ## Features
 
-- Use exceptions as components of your business logic, to improve readability of your code;
-- When an unhandled exception is printed, make it human readable and helpful.
-
+- Describe your business logic in docstrings of your classes and exceptions;
+- When printing an object or an exception, your code will explain to you what is going on.
 
 ## Installation
 
@@ -46,7 +44,7 @@ class InsufficientWizardryLevel(DocumentedError):
 
     @property
     def comment(self) -> str:
-        if self.actual_level == 0:
+        if self.actual_level <= 0:
             return '(You are Rincewind, right? Hi!)'
         else:
             return ''
@@ -57,6 +55,28 @@ raise InsufficientWizardryLevel(
     required_level=8,
     actual_level=0,
 )
+```
+
+which prints:
+
+```
+---------------------------------------------------------------------
+InsufficientWizardryLevel           Traceback (most recent call last)
+<ipython-input-1-d8ccdb953cf6> in <module>
+     27 
+     28 
+---> 29 raise InsufficientWizardryLevel(
+     30     spell='Animal transformation',
+     31     required_level=8,
+
+InsufficientWizardryLevel: 
+🧙 Your level of wizardry is insufficient ☹
+
+    Spell: Animal transformation
+    Minimum level required: 8
+    Actual level: 0 (You are Rincewind, right? Hi!)
+
+Unseen University will be happy to assist in your training! 🎓
 ```
 
 ## License
