@@ -1,40 +1,67 @@
-# documented-error
+# documented
 
-[![Build Status](https://travis-ci.com/python-platonic/documented-error.svg?branch=master)](https://travis-ci.com/python-platonic/documented-error)
-[![Coverage](https://coveralls.io/repos/github/python-platonic/documented-error/badge.svg?branch=master)](https://coveralls.io/github/python-platonic/documented-error?branch=master)
-[![Python Version](https://img.shields.io/pypi/pyversions/documented-error.svg)](https://pypi.org/project/documented-error/)
+[![Build Status](https://travis-ci.com/python-platonic/documented.svg?branch=master)](https://travis-ci.com/python-platonic/documented)
+[![Coverage](https://coveralls.io/repos/github/python-platonic/documented/badge.svg?branch=master)](https://coveralls.io/github/python-platonic/documented?branch=master)
+[![Python Version](https://img.shields.io/pypi/pyversions/documented.svg)](https://pypi.org/project/documented/)
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 
-Human readable Python exceptions.
+Human readable exceptions in Python.
 
 
 ## Features
 
-- Fully typed with annotations and checked with mypy, [PEP561 compatible](https://www.python.org/dev/peps/pep-0561/)
-- Add yours!
+- Use exceptions as components of your business logic, to improve readability of your code;
+- When an unhandled exception is printed, make it human readable and helpful.
 
 
 ## Installation
 
 ```bash
-pip install documented-error
+pip install documented
 ```
 
 
 ## Example
 
-Showcase how your project can be used:
-
 ```python
-from documented_error.example import some_function
+from dataclasses import dataclass
+from documented import DocumentedError
 
-print(some_function(3, 4))
-# => 7
+
+@dataclass
+class InsufficientWizardryLevel(DocumentedError):
+    """
+    🧙 Your level of wizardry is insufficient ☹
+
+        Spell: {self.spell}
+        Minimum level required: {self.required_level}
+        Actual level: {self.actual_level} {self.comment}
+
+    Unseen University will be happy to assist in your training! 🎓
+    """
+
+    spell: str
+    required_level: int
+    actual_level: int
+
+    @property
+    def comment(self) -> str:
+        if self.actual_level == 0:
+            return '(You are Rincewind, right? Hi!)'
+        else:
+            return ''
+
+
+raise InsufficientWizardryLevel(
+    spell='Animal transformation',
+    required_level=8,
+    actual_level=0,
+)
 ```
 
 ## License
 
-[MIT](https://github.com/python-platonic/documented-error/blob/master/LICENSE)
+[MIT](https://github.com/python-platonic/documented/blob/master/LICENSE)
 
 
 ## Credits

@@ -2,7 +2,7 @@
 
 import pytest
 
-from documented_error.example import some_function
+from documented.example import some_function
 
 
 @pytest.mark.parametrize(('first', 'second', 'expected'), [
