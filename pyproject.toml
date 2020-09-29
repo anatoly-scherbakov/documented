@@ -46,4 +46,4 @@ tomlkit = "^0.7"
 
 # Python 3.6 does not have dataclasses in standard library, but we use them for testing.
 # We have to install the backport library.
-dataclasses = { version = "0.7", python = "3.6" }
+dataclasses = { version = "0.7", python = "3.6.*" }

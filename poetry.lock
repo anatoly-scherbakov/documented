@@ -118,7 +118,7 @@ version = "1.5.4"
 [[package]]
 category = "dev"
 description = "A backport of the dataclasses module for Python 3.6"
-marker = "python_version == \"3.6\""
+marker = "python_version >= \"3.6.0\" and python_version < \"3.7.0\""
 name = "dataclasses"
 optional = false
 python-versions = ">=3.6, <3.7"
@@ -994,7 +994,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-cov", "jaraco.test (>=3.2.0)", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy"]
 
 [metadata]
-content-hash = "2738f987ad7bcf96f7468e828c98962a4cc2e69d9230a23a8b7ffd2550cfa959"
+content-hash = "948d0a8b93f89f9922fe0ff7462ee4bcead4194fb43acf58030ad00609169c97"
 python-versions = "^3.6"
 
 [metadata.files]
