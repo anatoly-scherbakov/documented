@@ -5,8 +5,8 @@ build-backend = "poetry.masonry.api"
 
 [tool.poetry]
 name = "documented"
-version = "0.1.0"
-description = "Human readable Python exceptions."
+version = "0.1.1"
+description = "Templated docstrings for Python classes."
 license = "MIT"
 
 authors = ["Anatoly Scherbakov <altaisoft@gmail.com>"]
@@ -41,6 +41,5 @@ pytest-randomly = "^3.4"
 
 sphinx = "^2.2"
 sphinx-autodoc-typehints = "^1.10"
-doc8 = "^0.8"
 m2r = "^0.2"
 tomlkit = "^0.7"

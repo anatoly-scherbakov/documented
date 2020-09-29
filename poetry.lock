@@ -117,22 +117,6 @@ version = "1.4.1"
 
 [[package]]
 category = "dev"
-description = "Style checker for Sphinx (or other) RST documentation"
-name = "doc8"
-optional = false
-python-versions = "*"
-version = "0.8.1"
-
-[package.dependencies]
-Pygments = "*"
-chardet = "*"
-docutils = "*"
-restructuredtext-lint = ">=0.7"
-six = "*"
-stevedore = "*"
-
-[[package]]
-category = "dev"
 description = "Docutils -- Python Documentation Utilities"
 name = "docutils"
 optional = false
@@ -997,7 +981,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "439e1985e109469ff7dbaeba8739fef2aa7fd6688f4c8d56eefb1df26fe262f2"
+content-hash = "d997cd39f59afe80182b327ecec48b1e0cef80d0014c870a5e2f2c97dfb6104b"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -1077,10 +1061,6 @@ coverage = [
 darglint = [
     {file = "darglint-1.4.1-py3-none-any.whl", hash = "sha256:929f4127f2e5e5b8150d19eb4ceef424ee1432f747daec6b6ab295649e28abb8"},
     {file = "darglint-1.4.1.tar.gz", hash = "sha256:9147af9e6872e15209f67a70e6c7f16a821e516c0c06495fdb87e60ac0e5865a"},
-]
-doc8 = [
-    {file = "doc8-0.8.1-py2.py3-none-any.whl", hash = "sha256:4d58a5c8c56cedd2b2c9d6e3153be5d956cf72f6051128f0f2255c66227df721"},
-    {file = "doc8-0.8.1.tar.gz", hash = "sha256:4d1df12598807cf08ffa9a1d5ef42d229ee0de42519da01b768ff27211082c12"},
 ]
 docutils = [
     {file = "docutils-0.16-py2.py3-none-any.whl", hash = "sha256:0c5b78adfbf7762415433f5515cd5c9e762339e23369dbe8000d84a4bf4ab3af"},

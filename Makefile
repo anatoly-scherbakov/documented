@@ -4,7 +4,6 @@ SHELL:=/usr/bin/env bash
 lint:
 	mypy documented tests/*.py
 	flake8 .
-	doc8 -q docs
 
 .PHONY: unit
 unit:

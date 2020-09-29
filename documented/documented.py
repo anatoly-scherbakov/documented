@@ -30,4 +30,4 @@ class Documented:
         """Preformat the message template."""
         return textwrap.dedent(
             self.__doc__ or '{self}',
-        )
+        ).strip('\n')
