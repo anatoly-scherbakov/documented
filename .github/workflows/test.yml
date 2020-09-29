@@ -29,12 +29,14 @@ jobs:
     - name: Install dependencies
       run: |
         source "$HOME/.poetry/env"
-        poetry config virtualenvs.in-project false
+        poetry config virtualenvs.in-project true
         poetry install
 
     - name: Run checks
       run: |
         source "$HOME/.poetry/env"
+        find "$HOME" -name "mypy" -print
+        echo $PATH
         make test
 
     # Uncomment these lines if you wish to upload coverage to codecov:
