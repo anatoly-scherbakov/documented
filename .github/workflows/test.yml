@@ -36,8 +36,6 @@ jobs:
       run: |
         source "$HOME/.poetry/env"
         export PATH="$(pwd)/.venv/bin:$PATH"
-        find "$HOME" -name "mypy" -print
-        echo $PATH
         make test
 
     # Uncomment these lines if you wish to upload coverage to codecov:
