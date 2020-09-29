@@ -29,18 +29,17 @@ jobs:
     - name: Install dependencies
       run: |
         source "$HOME/.poetry/env"
-        poetry config virtualenvs.in-project true
+        poetry config virtualenvs.in-project false
         poetry install
 
     - name: Run checks
       run: |
         source "$HOME/.poetry/env"
         make test
-        
+
     # Uncomment these lines if you wish to upload coverage to codecov:
     # https://codecov.io/
-    # - name: Upload coverage to Codecov  
-    #   uses: codecov/codecov-action@v1
-    #   with:
-    #     file: ./coverage.xml
-
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        file: ./coverage.xml
