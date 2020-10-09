@@ -120,6 +120,7 @@ You can also access elements of lists and dicts by index, for example: `{self.co
 * About naming and abstracting things: [Kevlin Henney. Seven Ineffective Coding Habits of Many Programmers](https://www.youtube.com/watch?v=ZsHMHukIlJY)
 * [Python: Better Typed Than You Think](https://beepb00p.xyz/mypy-error-handling.html) summarizes a number of ways to handle errors in Python programs
 * [dry-python/returns](http://github.com/dry-python/returns) proposes to replace exceptions with monadic [`Result` container](https://returns.readthedocs.io/en/latest/pages/result.html), which works great in [Scala](https://www.scala-lang.org/api/2.9.3/scala/Either.html), [Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/10_Error_Handling#the-either-monad), and [Rust](https://doc.rust-lang.org/stable/rust-by-example/error/result.html), — but arguably not everyone would want to adopt this approach in their Python codebase.
+* [Exceptions as control flow](https://blog.cerebralab.com/Exceptions_as_control_flow), to the contrast, describes advantages of using exceptions to control your application.
 
 Which actually explains the meaning of this little helper: if we're stuck with exceptions in Python, why not at least make them friendlier?
 
