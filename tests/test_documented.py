@@ -25,6 +25,6 @@ def test_access_by_key():
     )
 
     assert str(united_states) == (
-        'Country with regions list.\n\n' +
+        'Country with regions list.\n\n'
         'Example region: Alabama.'
     )
