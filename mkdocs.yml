@@ -18,6 +18,8 @@ plugins:
   - search
   - macros:
       on_error_fail: true
+      modules:
+        - macros
 
 theme:
   name: material

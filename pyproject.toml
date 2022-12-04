@@ -40,6 +40,7 @@ add-trailing-comma = "^2.3.0"
 safety = "^2.3.3"
 pytest-cov = "^4.0.0"
 mkdocs-macros-plugin = "^0.7.0"
+plumbum = "^1.8.0"
 
 [tool.flakeheaven.exceptions."**/__init__.py"]
 pyflakes = ["-F401"]
