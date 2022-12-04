@@ -25,11 +25,15 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.7,<4.0"
+python = ">=3.8.1,<4.0"
 
 [tool.poetry.group.dev.dependencies]
 wemake-python-styleguide = "^0.17.0"
 pytest = "^7.2.0"
 mkdocs-material = "^8.5.11"
 mypy = "^0.991"
+flakeheaven = "^3.2.1"
 
+# This prevents flake8-commas from crashing.
+setuptools = "^65.6.3"
+add-trailing-comma = "^2.3.0"
