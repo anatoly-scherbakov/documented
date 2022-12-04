@@ -3,7 +3,7 @@ SHELL:=/usr/bin/env bash
 .PHONY: lint
 lint:
 	mypy documented tests/*.py
-	flake8 .
+	flakeheaven lint
 
 .PHONY: unit
 unit:
