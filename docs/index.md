@@ -1,4 +1,6 @@
-# documented
+---
+title: documented
+---
 
 [![Coverage](https://coveralls.io/repos/github/python-platonic/documented/badge.svg?branch=master)](https://coveralls.io/github/python-platonic/documented?branch=master)
 [![Python Version](https://img.shields.io/pypi/pyversions/documented.svg)](https://pypi.org/project/documented/)

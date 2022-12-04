@@ -1,0 +1,30 @@
+site_name: documented
+repo_url: https://github.com/anatoly-scherbakov/documented
+repo_name: documented
+copyright: Copyright &copy; 2022 Anatoly Scherbakov
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - attr_list
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+  - search
+  - macros:
+      on_error_fail: true
+
+theme:
+  name: material
+  language: ru
+  features:
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.sections
+    # - navigation.indexes
+    - content.code.annotate
