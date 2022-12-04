@@ -24,63 +24,14 @@ pip install documented
 
 ## Example
 
-```python
-from dataclasses import dataclass
-from documented import DocumentedError
-
-
-@dataclass
-class InsufficientWizardryLevel(DocumentedError):
-    """
-    🧙 Your level of wizardry is insufficient ☹
-
-        Spell: {self.spell}
-        Minimum level required: {self.required_level}
-        Actual level: {self.actual_level} {self.comment}
-
-    Unseen University will be happy to assist in your training! 🎓
-    """
-
-    spell: str
-    required_level: int
-    actual_level: int
-
-    @property
-    def comment(self) -> str:
-        if self.actual_level <= 0:
-            return '(You are Rincewind, right? Hi!)'
-        else:
-            return ''
-
-
-raise InsufficientWizardryLevel(
-    spell='Animal transformation',
-    required_level=8,
-    actual_level=0,
-)
-```
-
-which prints:
-
-```
----------------------------------------------------------------------
-InsufficientWizardryLevel           Traceback (most recent call last)
-<ipython-input-1-d8ccdb953cf6> in <module>
-     27 
-     28 
----> 29 raise InsufficientWizardryLevel(
-     30     spell='Animal transformation',
-     31     required_level=8,
-
-InsufficientWizardryLevel: 
-🧙 Your level of wizardry is insufficient ☹
-
-    Spell: Animal transformation
-    Minimum level required: 8
-    Actual level: 0 (You are Rincewind, right? Hi!)
-
-Unseen University will be happy to assist in your training! 🎓
-```
+{{
+  run_python_script("examples/wizardry.py",
+  annotations=[
+    "Usage of `dataclasses` is not required but helps alleviate boilerplate.",
+    "Docstring is used to render the exception. More than that, you can render fields of the exception instance in it using `{self.something}` placeholders.",
+    "You cannot call methods of the exception instance. But you can refer to properties to help generate dynamic content."
+  ]
+) }}
 
 ## Usage
 
@@ -98,19 +49,17 @@ You can also access elements of lists and dicts by index, for example: `{self.co
 
 ## Making your exceptions sane
 
-* Create your own exception classes in terms of your domain, to play a part in your business logic.
-* Do not use the word `Exception` or `Error` in their names. Your code should `raise` things like:
-    * `BalanceInsufficient`
-    * `PlanetNotFound`
-    * `TetOffline`
-    * `OrderDeclined`
-
-  And should not:
-
-    * `ValueError`
-    * `Exception`
-    * `CatastrophicalError`
-
+* Create your own exception classes in terms of your domain, to play a part in your business logic, instead of using built-in `Exception` or `ValueError`.
+* Refrain from using the word `Exception` or `Error` in their names,
+    * For instance:
+      * `BalanceInsufficient`
+      * `PlanetNotFound`
+      * `TetOffline`
+      * `OrderDeclined`
+    * Instead of:
+        * `ValueError`
+        * `Exception`
+        * `CatastrophicalError`.
 * Store meaningful properties of your errors in fields of the exception classes.
 * Use [`dataclasses`](https://docs.python.org/3/library/dataclasses.html), [`attrs`](https://github.com/python-attrs/attrs) or [`pydantic`](https://github.com/samuelcolvin/pydantic) to save yourself from boilerplate in `__init__()` — and to get IDE support.
 * Maintain docstrings of your exceptions to contain up-to-date, human readable descriptions of what they mean.
