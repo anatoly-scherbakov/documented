@@ -29,7 +29,7 @@ def test_plain_inheritance():
     with pytest.raises(NotAWizard) as err:
         raise NotAWizard(name='Rincewind')
 
-    assert str(err.value) == (  # type: ignore  # noqa: WPS441
+    assert str(err.value) == (  # noqa: WPS441
         'Rincewind, sorry to say that you are not a wizard.'
     )
 
@@ -39,7 +39,7 @@ def test_dataclass():
     with pytest.raises(YouHaveLiedToMe) as err:
         raise YouHaveLiedToMe(username='Rincewind')
 
-    assert str(err.value) == (  # type: ignore  # noqa: WPS441
+    assert str(err.value) == (  # noqa: WPS441
         "If I were you, Rincewind, I'd sue my face for slander."
     )
 
@@ -49,5 +49,5 @@ def test_rendering_failure():
     with pytest.raises(FailingError) as err:
         raise FailingError()
 
-    with pytest.raises(AttributeError):  # type: ignore  # noqa: WPS441
+    with pytest.raises(AttributeError):  # noqa: WPS441
         str(err.value)  # noqa: WPS441
