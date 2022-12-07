@@ -1,11 +1,9 @@
 """MkDocs macros for the documentation site."""
 import functools
-import textwrap
 from pathlib import Path
-from plumbum.cmd import python
 
 from mkdocs_macros.plugin import MacrosPlugin
-
+from plumbum.cmd import python
 
 TEMPLATE = '''
 ```python title="{path}"
