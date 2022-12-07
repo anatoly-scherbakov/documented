@@ -13,7 +13,7 @@ TEMPLATE = '''
 {annotations}
 
 ⇒
-```python title="stderr"
+```python title="{cmd} {path}"
 {stderr}
 ```
 '''
@@ -32,14 +32,23 @@ def run_python_script(
     path: str,
     docs_dir: Path,
     annotations: list[str] | None = None,
+    args: list[str] | None = None,
 ):
     if annotations is None:
         annotations = []
 
+    if args is None:
+        args = []
+
     code_path = docs_dir / path
     code = code_path.read_text()
 
-    _, stdout, stderr = python[code_path].run(retcode=None)
+    _, stdout, stderr = python[*args, code_path].run(retcode=None)
+
+    cmd = 'python'
+    if args:
+        formatted_args = ' '.join(args)
+        cmd = f'{cmd} {formatted_args}'
 
     return TEMPLATE.format(
         path=path,
@@ -47,6 +56,7 @@ def run_python_script(
         stdout=stdout,
         stderr=stderr,
         annotations=format_annotations(annotations),
+        cmd=cmd,
     )
 
 

@@ -29,5 +29,5 @@ class Documented:
     def __docstring_template(self) -> str:  # noqa: WPS112
         """Preformat the message template."""
         return textwrap.dedent(
-            self.__doc__ or '{self}',
+            self.__doc__ or repr(self),
         ).strip('\n')

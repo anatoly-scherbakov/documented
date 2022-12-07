@@ -5,6 +5,17 @@ import pytest
 from documented import DocumentedError
 
 
+class NoDocstring(DocumentedError):
+    ...
+
+
+def test_no_docstring():
+    with pytest.raises(NoDocstring) as error_info:
+        raise NoDocstring()
+
+    assert str(error_info.value) == 'NoDocstring()'
+
+
 class NotAWizard(DocumentedError):
     """{self.name}, sorry to say that you are not a wizard."""
 
