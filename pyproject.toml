@@ -41,6 +41,10 @@ safety = "^2.3.3"
 pytest-cov = "^4.0.0"
 mkdocs-macros-plugin = "^0.7.0"
 plumbum = "^1.8.0"
+mkdocstrings = {extras = ["python"], version = "^0.19.0"}
+pylint = "^2.15.8"
+attrs = "^22.1.0"
+pydantic = "^1.10.2"
 
 [tool.flakeheaven.exceptions."**/__init__.py"]
 pyflakes = ["-F401"]

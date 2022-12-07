@@ -1,0 +1,5 @@
+---
+title: DocumentedError
+---
+
+::: documented.DocumentedError

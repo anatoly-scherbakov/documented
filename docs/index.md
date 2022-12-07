@@ -2,7 +2,7 @@
 title: documented
 ---
 
-[![Coverage](https://coveralls.io/repos/github/python-platonic/documented/badge.svg?branch=master)](https://coveralls.io/github/python-platonic/documented?branch=master)
+[![Coverage](https://coveralls.io/repos/github/anatoly-scherbakov/documented/badge.svg?branch=master)](https://coveralls.io/github/anatoly-scherbakov/documented?branch=master)
 [![Python Version](https://img.shields.io/pypi/pyversions/documented.svg)](https://pypi.org/project/documented/)
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 ![PyPI - License](https://img.shields.io/pypi/l/documented)
@@ -35,7 +35,7 @@ pip install documented
 
 ## Usage
 
-* Template rendering is done using [`str.format()`](https://docs.python.org/3.6/library/string.html#formatspec).
+* Template rendering is done using [`str.format()`](https://docs.python.org/3/library/string.html#formatspec).
 * That function receives the object instance as `self` keyword argument.
 * From template, you can't call methods of the object, but you can access its fields and properties.
 * [`textwrap.dedent()`](https://docs.python.org/3/library/textwrap.html#textwrap.dedent) is applied to the result, thus Python indentation rules do not corrupt the resulting message.
@@ -52,18 +52,19 @@ You can also access elements of lists and dicts by index, for example: `{self.co
 * Create your own exception classes in terms of your domain, to play a part in your business logic, instead of using built-in `Exception` or `ValueError`.
 * Refrain from using the word `Exception` or `Error` in their names,
     * For instance:
-      * `BalanceInsufficient`
-      * `PlanetNotFound`
-      * `TetOffline`
-      * `OrderDeclined`
+        * `BalanceInsufficient`
+        * `PlanetNotFound`
+        * `TetOffline`
+        * `OrderDeclined`
     * Instead of:
         * `ValueError`
         * `Exception`
         * `CatastrophicalError`.
+
 * Store meaningful properties of your errors in fields of the exception classes.
 * Use [`dataclasses`](https://docs.python.org/3/library/dataclasses.html), [`attrs`](https://github.com/python-attrs/attrs) or [`pydantic`](https://github.com/samuelcolvin/pydantic) to save yourself from boilerplate in `__init__()` — and to get IDE support.
 * Maintain docstrings of your exceptions to contain up-to-date, human readable descriptions of what they mean.
-* You will be stimulated to do this by [`documented`](https://github.com/python-platonic/documented): when an exception happens, the docstring becomes actually useful.
+* You will be stimulated to do this by [`documented`](https://github.com/anatoly-scherbakov/documented): when an exception happens, the docstring becomes actually useful.
 
 ## Links
 
@@ -74,4 +75,4 @@ You can also access elements of lists and dicts by index, for example: `{self.co
 
 Which actually explains the meaning of this little helper: if we're stuck with exceptions in Python, why not at least make them friendlier?
 
-This project was generated with [`wemake-python-package`](https://github.com/wemake-services/wemake-python-package). Current template version is: [5840464a31423422d7523897d854e92408eee6b8](https://github.com/wemake-services/wemake-python-package/tree/5840464a31423422d7523897d854e92408eee6b8). See what is [updated](https://github.com/wemake-services/wemake-python-package/compare/5840464a31423422d7523897d854e92408eee6b8...master) since then.
+This project was generated with [`wemake-python-package`](https://github.com/wemake-services/wemake-python-package).

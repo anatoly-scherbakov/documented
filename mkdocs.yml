@@ -16,6 +16,10 @@ markdown_extensions:
 
 plugins:
   - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options: {}
   - macros:
       on_error_fail: true
       modules:
