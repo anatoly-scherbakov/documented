@@ -27,10 +27,6 @@ plugins:
 
 theme:
   name: material
-  language: ru
   features:
-    # - navigation.tabs
-    # - navigation.tabs.sticky
     - navigation.sections
-    # - navigation.indexes
     - content.code.annotate
