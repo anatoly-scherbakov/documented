@@ -2,8 +2,8 @@ SHELL:=/usr/bin/env bash
 
 .PHONY: lint
 lint:
-	poetry run mypy documented tests/*.py
-	poetry run flakeheaven lint .
+	poetry run mypy documented tests
+	poetry run flakeheaven lint documented tests
 
 .PHONY: unit
 unit:
