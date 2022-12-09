@@ -1,6 +1,5 @@
 # documented
 
-[![Coverage](https://coveralls.io/repos/github/anatoly-scherbakov/documented/badge.svg?branch=master)](https://coveralls.io/github/anatoly-scherbakov/documented?branch=master)
 [![Python Version](https://img.shields.io/pypi/pyversions/documented.svg)](https://pypi.org/project/documented/)
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 ![PyPI - License](https://img.shields.io/pypi/l/documented)
