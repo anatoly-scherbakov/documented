@@ -28,23 +28,14 @@ classifiers = [
 python = ">=3.8.1,<4.0"
 
 [tool.poetry.group.dev.dependencies]
-wemake-python-styleguide = "^0.17.0"
-pytest = "^7.2.0"
 mkdocs-material = "^8.5.11"
-mypy = "^0.991"
-flakeheaven = "^3.2.1"
 
 # This prevents flake8-commas from crashing.
-setuptools = "^65.6.3"
-add-trailing-comma = "^2.3.0"
-safety = "^2.3.3"
-pytest-cov = "^4.0.0"
 mkdocs-macros-plugin = "^0.7.0"
-plumbum = "^1.8.0"
 mkdocstrings = {extras = ["python"], version = "^0.19.0"}
-pylint = "^2.15.8"
 attrs = "^22.1.0"
 pydantic = "^1.10.2"
+jeeves-yeti-pyproject = "^0.1.1"
 
 [tool.flakeheaven.exceptions."**/__init__.py"]
 pyflakes = ["-F401"]

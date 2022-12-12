@@ -40,7 +40,7 @@ jobs:
         poetry run pip install -U pip
         poetry install
     - name: Run checks
-      run: make test
+      run: j test
 
     # Upload coverage to codecov: https://codecov.io/
     - name: Upload coverage to Codecov
