@@ -3,9 +3,10 @@ import functools
 from pathlib import Path
 
 from mkdocs_macros.plugin import MacrosPlugin
-from plumbum.cmd import python
+from sh import python, ErrorReturnCode
 
-TEMPLATE = '''
+
+TEMPLATE = """
 ```python title="{path}"
 {code}
 ```
@@ -16,10 +17,11 @@ TEMPLATE = '''
 ```python title="{cmd} {path}"
 {stderr}
 ```
-'''
+"""
 
 
 def format_annotations(annotations: list[str]) -> str:
+    """Format annotations for a piece of code."""
     enumerated_annotations = enumerate(annotations, start=1)
 
     return '\n\n'.join(
@@ -43,7 +45,11 @@ def run_python_script(
     code_path = docs_dir / path
     code = code_path.read_text()
 
-    _, stdout, stderr = python[*args, code_path].run(retcode=None)
+    try:
+        stdout, stderr = python(*args, code_path), None
+    except ErrorReturnCode as err:
+        stdout = err.stdout.decode()
+        stderr = err.stderr.decode()
 
     cmd = 'python'
     if args:

@@ -187,9 +187,6 @@ cmake-build-debug/
 # JIRA plugin
 atlassian-ide-plugin.xml
 
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
+.python-version
+.pytest_cache
+.flakeheaven_cache
