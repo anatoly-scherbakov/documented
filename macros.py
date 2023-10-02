@@ -3,7 +3,8 @@ import functools
 from pathlib import Path
 
 from mkdocs_macros.plugin import MacrosPlugin
-from plumbum.cmd import python
+from sh import python, ErrorReturnCode
+
 
 TEMPLATE = '''
 ```python title="{path}"
@@ -43,7 +44,12 @@ def run_python_script(
     code_path = docs_dir / path
     code = code_path.read_text()
 
-    _, stdout, stderr = python[*args, code_path].run(retcode=None)
+    try:
+        stdout = python(*args, code_path)
+        stderr = None
+    except ErrorReturnCode as err:
+        stdout = err.stdout.decode()
+        stderr = err.stderr.decode()
 
     cmd = 'python'
     if args:
@@ -62,6 +68,7 @@ def run_python_script(
 
 def define_env(env: MacrosPlugin):
     """Hook function."""
+    import macros
     env.macro(
         functools.partial(
             run_python_script,
