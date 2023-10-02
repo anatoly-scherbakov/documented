@@ -34,7 +34,7 @@ mkdocs-material = "^8.5.11"
 mkdocs-macros-plugin = "^0.7.0"
 mkdocstrings = {extras = ["python"], version = "^0.19.0"}
 attrs = "^22.1.0"
-pydantic = "^1.10.2"
+pydantic = ">=1.10.2,<3.0.0"
 jeeves-yeti-pyproject = "^0.1.1"
 
 [tool.flakeheaven.exceptions."**/__init__.py"]
