@@ -2,7 +2,7 @@ from documented.untouchable import Untouchable
 
 try:
     from rich.markdown import Markdown
-except ImportError:
+except ImportError:  # pragma: nocover
     from documented import DocumentedError
 
     class RichNotInstalled(DocumentedError):
