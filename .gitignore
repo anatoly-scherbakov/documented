@@ -189,3 +189,4 @@ atlassian-ide-plugin.xml
 
 .python-version
 .pytest_cache
+.flakeheaven_cache
