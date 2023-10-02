@@ -1,5 +1,6 @@
 import logging
 import textwrap
+from documented.contrib.rich_markdown import Markdown
 
 logger = logging.getLogger(__name__)
 
@@ -31,3 +32,7 @@ class Documented:
         return textwrap.dedent(
             self.__doc__ or repr(self),
         ).strip('\n')
+
+    def __rich__(self):
+        """Represent the object as Markdown."""
+        return Markdown(str(self))
