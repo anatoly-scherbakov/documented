@@ -1,5 +1,6 @@
 import pytest
 
+from documented.untouchable import Untouchable
 from tests.common import Country
 
 
@@ -11,3 +12,8 @@ def united_states() -> Country:
             # ...
         },
     )
+
+
+@pytest.fixture
+def untouchable() -> Untouchable:
+    return Untouchable()

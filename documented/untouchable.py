@@ -11,11 +11,11 @@ class Untouchable:
         """Call the object and fail."""
         raise self.exception
 
-    def __getattr__(self, item):
+    def __getattr__(self, item):  # noqa: WPS110
         """Ask for an attribute and fail."""
         raise self.exception
 
-    def __getitem__(self, item):
+    def __getitem__(self, item):  # noqa: WPS110
         """Ask for an item and fail."""
         raise self.exception
 

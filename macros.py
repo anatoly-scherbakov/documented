@@ -6,7 +6,7 @@ from mkdocs_macros.plugin import MacrosPlugin
 from sh import python, ErrorReturnCode
 
 
-TEMPLATE = '''
+TEMPLATE = """
 ```python title="{path}"
 {code}
 ```
@@ -17,10 +17,11 @@ TEMPLATE = '''
 ```python title="{cmd} {path}"
 {stderr}
 ```
-'''
+"""
 
 
 def format_annotations(annotations: list[str]) -> str:
+    """Format annotations for a piece of code."""
     enumerated_annotations = enumerate(annotations, start=1)
 
     return '\n\n'.join(
@@ -45,8 +46,7 @@ def run_python_script(
     code = code_path.read_text()
 
     try:
-        stdout = python(*args, code_path)
-        stderr = None
+        stdout, stderr = python(*args, code_path), None
     except ErrorReturnCode as err:
         stdout = err.stdout.decode()
         stderr = err.stderr.decode()
@@ -68,7 +68,6 @@ def run_python_script(
 
 def define_env(env: MacrosPlugin):
     """Hook function."""
-    import macros
     env.macro(
         functools.partial(
             run_python_script,

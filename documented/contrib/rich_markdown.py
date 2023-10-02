@@ -1,9 +1,9 @@
 from documented.untouchable import Untouchable
 
 try:
-    from rich.markdown import Markdown
+    from rich.markdown import Markdown   # noqa: WPS433
 except ImportError:  # pragma: nocover
-    from documented import DocumentedError
+    from documented import DocumentedError  # noqa: WPS433
 
     class RichNotInstalled(DocumentedError):
         """
@@ -18,6 +18,6 @@ except ImportError:  # pragma: nocover
         ```
         """
 
-    Markdown = Untouchable(  # type: ignore
+    Markdown = Untouchable(  # type: ignore   # noqa: WPS440
         exception=RichNotInstalled(),
     )

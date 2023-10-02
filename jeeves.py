@@ -29,4 +29,5 @@ def example():
 
 
 def serve():
+    """Serve documentation."""
     mkdocs.serve('-a', 'localhost:6854', _fg=True)
