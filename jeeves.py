@@ -29,4 +29,4 @@ def example():
 
 
 def serve():
-    mkdocs.serve('-a', 'localhost:6854')
+    mkdocs.serve('-a', 'localhost:6854', _fg=True)
