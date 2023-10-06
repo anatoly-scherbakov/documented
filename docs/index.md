@@ -41,7 +41,7 @@ graph LR
     Human readable text as the output, or log, of your application.
 
 !!! info inline "More"
-    [See docs](formatting/){ .md-button }
+    [See docs](rationale/){ .md-button }
 
 <br clear="both">
 
