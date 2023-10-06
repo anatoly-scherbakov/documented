@@ -8,7 +8,11 @@ markdown_extensions:
   - codehilite
   - attr_list
   - pymdownx.tabbed
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
@@ -30,3 +34,6 @@ theme:
   features:
     - navigation.sections
     - content.code.annotate
+
+extra_css:
+  - css/custom.css

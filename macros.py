@@ -7,16 +7,23 @@ from sh import python, ErrorReturnCode
 
 
 TEMPLATE = """
-```python title="{path}"
+<div class="side-by-side" markdown>
+<div class="admonition info" markdown>
+<p class="admonition-title" markdown>{path}</p>
+```python
 {code}
 ```
 
 {annotations}
+</div>
 
-⇒
-```python title="{cmd} {path}"
-{stderr}
+<div class="admonition {output_block_class}" markdown>
+<p class="admonition-title">python</p>
+```python
+{output}
 ```
+</div>
+</div>
 """
 
 
@@ -56,13 +63,15 @@ def run_python_script(
         formatted_args = ' '.join(args)
         cmd = f'{cmd} {formatted_args}'
 
+    output = '\n'.join(filter(bool, [stdout, stderr]))
+
     return TEMPLATE.format(
         path=path,
         code=code,
-        stdout=stdout,
-        stderr=stderr,
+        output=output,
         annotations=format_annotations(annotations),
         cmd=cmd,
+        output_block_class='failure' if stderr else 'success',
     )
 
 
