@@ -1,5 +1,8 @@
 ---
 title: documented
+hide:
+  - navigation
+  - toc
 ---
 
 [![Python Version](https://img.shields.io/pypi/pyversions/documented.svg)](https://pypi.org/project/documented/)
@@ -8,28 +11,44 @@ title: documented
 
 Templated docstrings for Python classes.
 
+## Example
+
+{{ run_python_script("examples/open-the-pod-bay-doors.py") }}
+
+## Process
+
+```mermaid
+graph LR
+    A("Class docstring<br>with <code>{self.placeholders}</code>") --> B(dedent)
+    B --> C("interpolate")
+    C --> D("<code>__str__()</code>")
+    D --> raise("raise")
+    D --> F("print")
+    F --> rich("even as Markdown with <code>rich</code>")
+    
+    style raise stroke:#CC0000
+```
+
 ## Features
 
-- Describe your business logic in docstrings of your classes and exceptions;
-- When printing an object or an exception, the library will substitute the placeholders in the docstring text with runtime values,
-- And you (or your user) will see a human readable text.
+!!! info inline "In your docstrings"
+    Describe an object, or an exception, in your docstring, and use `{self.placeholders}` to include its fields & properties
+
+!!! info inline "Print or raise the object"
+    The docstring with resolved `{self.placeholders}` will be its string representation
+
+!!! info inline "Result"
+    Human readable text as the output, or log, of your application.
+
+!!! info inline "More"
+    [See docs](formatting/){ .md-button }
+
+<br clear="both">
 
 ## Installation
 
 ```bash
 pip install documented
 ```
-
-
-## Example
-
-{{
-  run_python_script("examples/wizardry.py",
-  annotations=[
-    "Usage of `dataclasses` is not required but helps alleviate boilerplate.",
-    "Docstring is used to render the exception. More than that, you can render fields of the exception instance in it using `{self.something}` placeholders.",
-    "You cannot call methods of the exception instance. But you can refer to properties to help generate dynamic content."
-  ]
-) }}
 
 This project was generated with [`wemake-python-package`](https://github.com/wemake-services/wemake-python-package).
