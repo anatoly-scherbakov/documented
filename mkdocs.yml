@@ -1,7 +1,7 @@
 site_name: documented
 repo_url: https://github.com/anatoly-scherbakov/documented
 repo_name: documented
-copyright: Copyright &copy; 2022 Anatoly Scherbakov
+copyright: Copyright &copy; 2023 <a href="https://yeti.sh">Anatoly Scherbakov</a>
 
 markdown_extensions:
   - admonition
@@ -35,6 +35,7 @@ theme:
   features:
     - navigation.sections
     - content.code.annotate
+  prev_next_buttons_location: bottom
 
 extra_css:
   - css/custom.css

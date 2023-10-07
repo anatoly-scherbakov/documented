@@ -1,7 +1,6 @@
 ---
 title: documented
 hide:
-  - navigation
   - toc
 ---
 
@@ -39,9 +38,6 @@ graph LR
 
 !!! info inline "Result"
     Human readable text as the output, or log, of your application.
-
-!!! info inline "More"
-    [See docs](rationale/){ .md-button }
 
 <br clear="both">
 
