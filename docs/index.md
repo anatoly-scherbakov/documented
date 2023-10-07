@@ -4,6 +4,8 @@ hide:
   - toc
 ---
 
+# `documented`
+
 [![Python Version](https://img.shields.io/pypi/pyversions/documented.svg)](https://pypi.org/project/documented/)
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 ![PyPI - License](https://img.shields.io/pypi/l/documented)
@@ -14,37 +16,56 @@ Templated docstrings for Python classes.
 
 {{ run_python_script("examples/open-the-pod-bay-doors.py") }}
 
-## Process
-
-```mermaid
-graph LR
-    A("Class docstring<br>with <code>{self.placeholders}</code>") --> B(dedent)
-    B --> C("interpolate")
-    C --> D("<code>__str__()</code>")
-    D --> raise("raise")
-    D --> F("print")
-    F --> rich("even as Markdown with <code>rich</code>")
-    
-    style raise stroke:#CC0000
-```
-
-## Features
-
-!!! info inline "In your docstrings"
-    Describe an object, or an exception, in your docstring, and use `{self.placeholders}` to include its fields & properties
-
-!!! info inline "Print or raise the object"
-    The docstring with resolved `{self.placeholders}` will be its string representation
-
-!!! info inline "Result"
-    Human readable text as the output, or log, of your application.
-
-<br clear="both">
-
 ## Installation
 
-```bash
-pip install documented
-```
+`documented` is on [:simple-pypi: PyPI](https://pypi.org/project/documented).
 
-This project was generated with [`wemake-python-package`](https://github.com/wemake-services/wemake-python-package).
+=== "pip"
+    ```bash
+    pip install documented
+    ```
+
+=== ":simple-poetry: poetry"
+    ```bash
+    poetry add documented
+    ```
+
+=== "pipenv"
+    ```bash
+    pipenv install documented
+    ```
+
+=== "pdm"
+    ```bash
+    pdm add documented
+    ```
+
+=== ":simple-condaforge: conda"
+
+    ```bash
+    conda install -c conda-forge documented
+    ```
+
+
+## :octicons-workflow-24: Flow
+
+```mermaid
+graph TD
+    A("Class docstring<br>with <code>{self.placeholders}</code>") --> dedent("↤ dedent")
+    dedent --> C("Interpolate<br><code>{self.placeholders}</code>")
+    C --> str("<code>__str__()</code>")
+    str -- "for<br><code>DocumentedError</code>" --> raise("💥 raise")
+    str -- "for<br><code>Documented</code>" --> print("🖨️ print | log")
+    print --> rich("as Markdown → console<br>with 🖥️ <code>rich</code>")
+    raise --> try("🏀 try … except")
+    raise -- Stacktrace --> print
+    try --> print
+    
+    style raise stroke:#CC0000
+    click dedent "https://docs.python.org/3/library/textwrap.html#textwrap.dedent"
+    click C "formatting/"
+    click rich "compatibility/rich/"
+    click str "https://docs.python.org/3/reference/datamodel.html#object.__str__"
+    click try "try-except/"
+    
+```

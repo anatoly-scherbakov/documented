@@ -13,6 +13,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
@@ -32,6 +34,7 @@ plugins:
 
 theme:
   name: material
+  logo: images/quotes.svg
   features:
     - navigation.sections
     - content.code.annotate

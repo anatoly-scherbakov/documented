@@ -1,6 +1,7 @@
 nav:
   - index.md
   - rationale.md
-  - philosophy.md
   - formatting.md
+  - try-except.md
+  - philosophy.md
   - ...

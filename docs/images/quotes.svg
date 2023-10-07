@@ -1,0 +1,11 @@
+<svg width="170" height="100" xmlns="http://www.w3.org/2000/svg">
+    <text x="0" y="100" font-family="Courier New" font-size="100" fill="white">"""</text>
+    <style>
+        text {
+            font-weight: bold;
+            stroke: white;
+            fill: white;
+            stroke-width: 2;
+        }
+    </style>
+</svg>

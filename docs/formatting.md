@@ -1,5 +1,7 @@
 ---
 title: Formatting
+hide:
+  - toc
 ---
 
 Template rendering is done using [`str.format()`](https://docs.python.org/3/library/string.html#formatspec). That function receives the object instance as `self` keyword argument.
