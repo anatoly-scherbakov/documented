@@ -95,3 +95,7 @@ The asterisk :material-asterisk: below denotes projects which are mine :slight_s
     See my site: [:material-web: yeti.sh](https://yeti.sh)
 
 <br clear="both"/>
+
+## :fontawesome-regular-paper-plane: Publications
+
+* [`documented`: make docstrings in your exceptions work](https://dev.to/anatolyscherbakov/documented-make-docstrings-in-your-exceptions-work-2kcf)
