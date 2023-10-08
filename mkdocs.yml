@@ -4,6 +4,7 @@ repo_name: documented
 copyright: Copyright &copy; 2023 <a href="https://yeti.sh">Anatoly Scherbakov</a>
 
 markdown_extensions:
+  - md_in_html
   - admonition
   - codehilite
   - attr_list

@@ -3,4 +3,5 @@ nav:
   - docstring.md
   - templating.md
   - try-except.md
+  - fallback.md
   - ...
