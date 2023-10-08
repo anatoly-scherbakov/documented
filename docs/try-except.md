@@ -12,16 +12,17 @@ graph TD
     style flow fill:#526cfe
 ```
 
+!!! info inline end "Read more on this"
+    [:paperclip: Exceptions as Control Flow](https://blog.cerebralab.com/Exceptions_as_control_flow){ .md-button .md-button--primary }
+
 Python `except` construct allows to manage how the application behaves depending on which exception has been raised. `documented` stimulates to add fields and properties to your exception classes, which you can neatly use in `except` clauses:
 
 ```python
 try:
-    do_stuff()
+    hal.do_stuff()
 except HALHasGoneCrazy as err:
     if err.is_moebius_cycle:
         hal.turn_off()
     else:
         hal.self_check()
 ```
-
-This way of organizing an application is very well described at [Exceptions as Control Flow](https://blog.cerebralab.com/Exceptions_as_control_flow) blogpost.

@@ -51,8 +51,8 @@ Templated docstrings for Python classes.
 
 ```mermaid
 graph TD
-    docstring("Class docstring<br>with <code>{self.placeholders}</code>") --> dedent("↤ dedent")
-    dedent --> C("Interpolate<br><code>{self.placeholders}</code>")
+    docstring("Class 📝 <code>docstring</code>") --> dedent("↤ dedent")
+    dedent --> C("✏️ Interpolate<br><code>{self.placeholders}</code>")
     C --> str("<code>__str__()</code>")
     str -- "for<br><code>DocumentedError</code>" --> raise("💥 raise")
     str -- "for<br><code>Documented</code>" --> print("🖨️ print | log")
