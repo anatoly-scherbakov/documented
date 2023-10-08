@@ -6,7 +6,9 @@ from documented import DocumentedError
 @pydantic_dataclass
 class PydanticError(DocumentedError):
     """
-    Incorrect answer to the Question of Life, Universe, and Everything.
+    Incorrect answer!
+
+    (To the Question of Life, Universe, and Everything.)
 
         - Answer given: {self.answer}
         - Correct answer: indubitably 42.
@@ -15,4 +17,4 @@ class PydanticError(DocumentedError):
     answer: str
 
 
-raise PydanticError(answer='bazinga')
+raise PydanticError(answer='bebebe')
