@@ -86,3 +86,12 @@ The asterisk :material-asterisk: below denotes projects which are mine :slight_s
 
 <br clear="both"/>
 
+## :material-phone-in-talk: Let's talk
+
+!!! info inline "Bug? Feature request?"
+    [:heavy_plus_sign: Submit an issue!](https://github.com/anatoly-scherbakov/documented/issues/new)
+
+!!! info inline "Anything else?"
+    See my site: [:material-web: yeti.sh](https://yeti.sh)
+
+<br clear="both"/>
