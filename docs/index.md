@@ -70,3 +70,19 @@ graph TD
     click docstring "docstring/"
     
 ```
+
+## :package: Used by
+
+The asterisk :material-asterisk: below denotes projects which are mine :slight_smile:
+
+!!! info inline "[iolanta](https://iolanta.tech)"
+    Linked Data workspace :material-asterisk:
+
+!!! info inline "[jeeves](https://jeeves.sh)"
+    Pythonic alternative to Make :material-asterisk:
+
+!!! info inline "Know more?"
+    [:heavy_plus_sign: Submit an issue!](https://github.com/anatoly-scherbakov/documented/issues/new)
+
+<br clear="both"/>
+
