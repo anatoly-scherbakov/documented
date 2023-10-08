@@ -51,7 +51,7 @@ Templated docstrings for Python classes.
 
 ```mermaid
 graph TD
-    A("Class docstring<br>with <code>{self.placeholders}</code>") --> dedent("↤ dedent")
+    docstring("Class docstring<br>with <code>{self.placeholders}</code>") --> dedent("↤ dedent")
     dedent --> C("Interpolate<br><code>{self.placeholders}</code>")
     C --> str("<code>__str__()</code>")
     str -- "for<br><code>DocumentedError</code>" --> raise("💥 raise")
@@ -63,9 +63,10 @@ graph TD
     
     style raise stroke:#CC0000
     click dedent "https://docs.python.org/3/library/textwrap.html#textwrap.dedent"
-    click C "formatting/"
+    click C "templating/"
     click rich "compatibility/rich/"
     click str "https://docs.python.org/3/reference/datamodel.html#object.__str__"
     click try "try-except/"
+    click docstring "docstring/"
     
 ```

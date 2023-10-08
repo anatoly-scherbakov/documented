@@ -38,7 +38,6 @@ theme:
   features:
     - navigation.sections
     - content.code.annotate
-  prev_next_buttons_location: bottom
 
 extra_css:
   - css/custom.css

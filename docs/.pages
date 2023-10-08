@@ -1,7 +1,6 @@
 nav:
   - index.md
-  - rationale.md
-  - formatting.md
+  - docstring.md
+  - templating.md
   - try-except.md
-  - philosophy.md
   - ...

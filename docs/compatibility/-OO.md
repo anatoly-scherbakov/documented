@@ -18,4 +18,4 @@ python -OO script.py
   args=['-OO']
 ) }}
 
-As you can see, the [Fallback `__repr__` mode](/repr/) is used in this case.
+As you can see, the [Fallback `__repr__` mode](/fallback/) is used in this case.
