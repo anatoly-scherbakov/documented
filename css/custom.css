@@ -1,0 +1,32 @@
+/*.side-by-side {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.side-by-side > .admonition {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .side-by-side {
+    flex-direction: column;
+  }
+}
+*/
+
+.side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.side-by-side .admonition .s2 {
+  word-wrap:break-word !important;
+}
+
+@media (max-width: 768px) {
+    .side-by-side {
+        grid-template-columns: 1fr;
+    }
+}

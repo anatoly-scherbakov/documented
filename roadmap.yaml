@@ -1,0 +1,9 @@
+roadmap:roadmap:
+  - title: Submit a PR to mkdocs-macros-plugin (or what)
+    is-blocked-by:
+      - title: Deploy new version
+        is-blocked-by:
+          - title: "Create and test `DocumentedWarning` class"
+            is-blocked-by:
+              - title: "Are warnings still relevant? Are they not deprecated?"
+          - title: "How can iolanta improve docs?"
