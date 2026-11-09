@@ -30,7 +30,7 @@ python = ">=3.8.1,<4.0"
 [tool.poetry.group.dev.dependencies]
 
 # This prevents flake8-commas from crashing.
-mkdocs-macros-plugin = "^0.7.0"
+mkdocs-macros-plugin = ">=0.7,<1.6"
 mkdocstrings = {extras = ["python"], version = ">=0.23,<0.25"}
 attrs = ">=22.1,<24.0"
 pydantic = "^2.4.2"
